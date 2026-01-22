@@ -37,7 +37,7 @@ function AdminApproval({ refreshTrigger }) {
   };
 
   return (
-    <div style={{ border: "2px solid black", padding: "20px" }}>
+    <div className="admin-box" style={{ border: "2px solid black", padding: "20px" }}>
       <h2>Admin Panel</h2>
 
       {data.length === 0 && <p>No submissions yet</p>}
@@ -47,8 +47,8 @@ function AdminApproval({ refreshTrigger }) {
           <p>
             <b>{item.userName}</b> | {item.softwareUsed} | {item.hoursWorked} hrs | Status: {item.status}
           </p>
-          <button onClick={() => approve(item._id)} style={{ marginRight: "10px" }}>Approve</button>
-          <button onClick={() => reject(item._id)}>Reject</button>
+          <button className="approve-btn" onClick={() => approve(item._id)} style={{ marginRight: "10px" }}>Approve</button>
+          <button className="reject-btn" onClick={() => reject(item._id)}>Reject</button>
         </div>
       ))}
     </div>

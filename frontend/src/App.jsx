@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import UserTimesheet from "./components/UserTimesheet";
 import AdminApproval from "./components/AdminApproval";
+import "./App.css";
 
 function App() {
   const [newSubmission, setNewSubmission] = useState(0); // triggers refresh

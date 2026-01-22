@@ -23,7 +23,7 @@ function UserTimesheet({ onSubmit }) {
   };
 
   return (
-    <div style={{ marginBottom: "30px" }}>
+    <div className="user-box" style={{ marginBottom: "30px" }}>
       <h2>User Timesheet</h2>
 
       <input
@@ -47,7 +47,7 @@ function UserTimesheet({ onSubmit }) {
         value={form.description}
         onChange={e => setForm({ ...form, description: e.target.value })}
       />
-      <button onClick={submitWork}>Submit Work</button>
+      <button className="submit-btn" onClick={submitWork}>Submit Work</button>
     </div>
   );
 }
