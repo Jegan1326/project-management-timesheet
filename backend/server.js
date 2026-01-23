@@ -1,13 +1,16 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
+const express = require('express');
+const connectDB = require('./config/db');
+const cors = require('cors');
+
+const submissionRoutes = require('./routes/submissionRoutes');
 
 const app = express();
+connectDB();
+
+app.use(cors()); // allow frontend to access
 app.use(express.json());
-app.use(cors());
 
-mongoose.connect("mongodb://127.0.0.1:27017/timesheetDB");
+app.use('/api/submissions', submissionRoutes);
 
-app.use("/api/timesheets", require("./routes/timesheetRoutes"));
-
-app.listen(5000, () => console.log("Server running on port 5000"));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
